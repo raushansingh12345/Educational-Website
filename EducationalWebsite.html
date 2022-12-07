@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learningpoint.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+            cursor: pointer;
+        }
+
+        /*___________landing page and navigation section___________*/
+        header {
+            background: url("bg.jpg");
+            
+            background-size: cover;
+            height: 120vh;
+            position: relative;
+        }
+
+        header nav {
+            width: 100%;
+            height: 10%;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            background-color: black;
+            z-index: 1;
+        }
+
+        nav .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        nav .logo span {
+            color: rgb(255, 51, 0);
+        }
+
+        nav .menu a {
+            margin: 0px 7.5px;
+            font-weight: 700;
+            text-decoration-line: none;
+            color: white;
+        }
+
+        nav .menu a:hover {
+            color: rgb(241, 18, 126);
+            transition: all .4s linear;
+        }
+
+        section.landing-page {
+            position: absolute;
+            top: 40%;
+            right: 19.5%;
+        }
+
+        .landing-page .overview p {
+            font-weight: 500;
+            color: darkblue;
+            (50, 11, 246);
+            transition: linear .4s
+        }
+
+        header:hover .descri {
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        }
+
+        section.landing-page p.tag-line {
+            font-size: 23px;
+            font-weight: 700;
+            color: black;
+        }
+
+        section.landing-page p.tag-line strong {
+            color: rgb(247, 6, 6);
+
+        }
+
+        .landing-page .btn button {
+            padding: 7.5px 15px;
+            margin: 4px 4px 0px 4px;
+            font-weight: 700;
+            border-radius: 6px;
+        }
+
+        .btn .btn1 {
+            background-color: black;
+            color: white;
+        }
+
+        .btn .btn2 {
+            background-color: white;
+            color: black;
+        }
+
+        header section.social-media {
+            position: absolute;
+            top: 40%;
+            left: 5%;
+        }
+
+        section.social-media a {
+            display: block;
+            color: rgb(11, 1, 1);
+            text-align: center;
+            font-size: 25px;
+            width: 45px;
+            height: auto;
+            border-radius: 22.5px;
+            margin-bottom: 10px;
+            padding: 8px 0px;
+            cursor: pointer;
+            background-color: rgb(252, 188, 12);
+        }
+
+        /*___________Meet my partnors section__________________  */
+
+
+        section.founders {
+            padding: 20px 70px;
+            background: linear-gradient(rgba(234, 218, 97, 0.7), rgba(4, 4, 4, 0.8)), url("ram2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .founders h3 {
+            text-align: center;
+            margin: 10px 0px 20px 0px;
+            font-size: 20px;
+            font-weight: 1000;
+            background-color: aliceblue;
+            color: rgb(6, 0, 0);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .founders h3::first-letter {
+            color: rgb(245, 7, 118);
+            font-size: 30px
+        }
+
+        .founders-cards {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 10px;
+
+        }
+
+        .card {
+            width: 300px;
+            height: auto;
+            background-color: whitesmoke;
+            text-align: center;
+            position: relative;
+            box-shadow: 0px 0px 5px 0px gray;
+            transition: .5s;
+
+        }
+
+        .card img {
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            padding: 15px;
+        }
+
+        .card h4 {
+            color: black;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .card .founder-overlay {
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            width: 100%;
+            height: 0%;
+            align-items: center;
+            padding: 40px 0px;
+            opacity: 0;
+            text-align: center;
+            box-shadow: 0px 0px 5px 0px gray;
+        }
+
+        .card:hover {
+            transform: scale(1.2, 1.2);
+        }
+
+        .card:hover .founder-overlay {
+            opacity: 1;
+            height: 100%;
+            background-color: rgb(234, 68, 134);
+            transition: all linear .3s;
+        }
+
+        .founder-overlay h4 {
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .founder-overlay a {
+            color: white;
+            text-align: center;
+            font-size: 25px;
+            width: 40px;
+            height: 40px;
+            border-radius: 22.5px;
+            padding: 8px 11px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: black;
+        }
+
+        /* _____What we provide_____ */
+        section.about-us {
+
+            padding: 30PX;
+        }
+
+        .about-container img {
+            height: 200px;
+            width: 250px;
+        }
+
+        .about-container {
+            display: flex;
+            text-align: center;
+            justify-content: space-evenly;
+        }
+
+        .about-us-list {
+            border: 2px solid green;
+            width: 18.75rem;
+            height: auto;
+            padding: 10px;
+        }
+
+        .about-us h3 {
+            text-align: center;
+            text-align: center;
+            margin: 10px 0px 20px 0px;
+            font-size: 20px;
+            font-weight: 1000;
+            background-color: black;
+            color: rgb(255, 255, 255);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-us h3::first-letter {
+            color: rgb(231, 5, 133);
+            font-size: 30px;
+        }
+
+        .about-us-list h4 {
+            font-size: 1.1rem;
+            color: rgb(251, 135, 3);
+            margin: 5px;
+        }
+
+        .about-us-list p {
+            margin: 5px;
+            color: darkcyan;
+            text-align: center;
+        }
+
+        .join12 {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* _____Footer Section_____ */
+        #footer-content4 {
+            text-align: center;
+            background-color: black;
+            color: aliceblue;
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--_____________LANDING PAGE AND NAVBAR_____________________-->
+    <header id="home">
+        <nav>
+            <div class="logo">
+                <p>Learning<span>Point</span></p>
+            </div>
+            <div class="menu">
+                <a href="Login Page.html" target="_blank"> LOGIN</a>
+                <a href="#home">HOME</a>
+                <a href="#name">ABOUT</a>
+                <a href="#media">PORTFOLIO</a>
+                <a href="#founders-sec">TEAM</a>
+                <a href="#name">SERVICES</a>
+                <a href="#footer-content4">CONTACTS</a>
+            </div>
+
+        </nav>
+        <section class="landing-page">
+            <div class="overview">
+                <p class="tag-line">Start learning with Learning <strong>Point</strong></p>
+                <p class="descri">Get unlimited access to<br>structured courses & doubt clearing sessions with us.....
+                </p>
+                <div class="btn">
+                    <button class="btn1"><a class="join12" href="Join Now.html" target="_blank">JOIN NOW</a></button>
+                    <button class="btn2">OFFER FOR YOU ONLY</button>
+                </div>
+            </div>
+        </section>
+        <!-- ___________________Portfolio/social media section____________________ -->
+        <section id="media" class="social-media">
+            <a href="https://instagram.com/sourabhsingh3923?igshid=Njc5ZjliZWU=" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/raushan-kumar-singh-676b5a245" target="_blank"><i
+                    class="fa-brands fa-linkedin"></i></a>
+            <a href="https://wa.me/qr/LRSVLSCDGQDKK1" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </section>
+    </header>
+    <!-- ______________What we provide Section___________________ -->
+    <section class="about-us" id="name">
+        <h3>what we provide</h3>
+        <div class="about-container">
+            <div class="about-us-list">
+                <img src="live.jpg" alt="">
+                <h4>Live/Scheduled Lectures</h4>
+                <p>Learning is an important step for achieving dreams in a student’s journey. We encourage the student
+                    to explore the concept in depth instead of memorizing.The live lectures help us in learning the
+                    needs of the students and motivates the students to be creative and be passionate learners.</p>
+            </div>
+            <div class="about-us-list">
+                <img src="doubt.jpg" alt="">
+                <h4>Study material</h4>
+                <p>At Learningpoint we always encourage students to ask questions. We have created an atmosphere where
+                    students don't hesitate to ask their doubts. We firmly believe to more you ask, the more you learn.
+                </p>
+            </div>
+            <div class="about-us-list">
+                <img src="material.jpg" alt="">
+                <h4>Structured And Targeted Study Material</h4>
+                <p> Explore the art of concept with our structured material with intelligent question tackling and
+                    problem solving skills. </p>
+            </div>
+            <div class="about-us-list">
+                <img src="test.jpg" alt="">
+                <h4>Test On Regular Basis For Progress Tracking</h4>
+                <p>It is a set of test papers designed to make the student comfortable with all possible varieties of
+                    questions along with the various ways in which the same question can be put in order to make the
+                    student sweat in the exam hall.The problems involve multi-dimensional thinking at a time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--________________Meet my partnors section_________________-->
+    <section id="founders-sec" class="founders">
+        <h3>Meet Our Partners</h3>
+        <div class="founders-cards">
+            <!-- Details of Raushan -->
+            <div class="card">
+                <div class="img">
+                    <img src="789 (1).png" alt="img loading">
+                    <h4>Rausahn Kumar Singh</h4>
+                </div>
+                <div class="founder-overlay">
+                    <h4>Rausahn Kumar Singh</h4>
+                    <a href="https://www.linkedin.com/in/raushan-kumar-singh-676b5a245" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://wa.me/qr/LRSVLSCDGQDKK1" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/sourabhsingh3923?igshid=Njc5ZjliZWU=" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <!--  Deatils of Katyayani-->
+            <div class="card">
+                <div class="img">
+                    <img src="123.jpeg" alt="">
+                    <h4>Katyayani Singh</h4>
+                </div>
+                <div class="founder-overlay">
+                    <h4>Katyayani Singh</h4>
+                    <a href="https://www.linkedin.com/in/katyayani-singh-312982252" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://wa.me/qr/SFJWSRSUZUA3A1" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/katyayani_singh_14?igshid=NDU3Y2E5ZmY=" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--__________footer section______________-->
+    <div id="footer-content4">
+
+        <p>&#169;LearningPoint</p>
+        <p>+91 8084940404</p>
+        <br>
+        <p>We understand that every student has different needs
+            <br> and capabilities, which is why we create such a wonderful
+            <br> and unique curriculum that is the best fit for every student.
+        </p>
+        <br>
+        <p>Business Gmail Id: rksfgh321@gmai.com</p>
+        <p>Office adress: 16, Duraundha, Siwan, Bihar, 841240
+        </p>
+
+    </div>
+</body>
+
+</html>
